@@ -1,0 +1,190 @@
+/* Reseto básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Encabezado, contenido principal, pie de página */
+    min-height: 100vh; /* Asegura que el contenido cubra al menos la altura de la pantalla */
+}
+
+/* Estilos del encabezado */
+header {
+    text-align: center;
+    background-color: rgb(226, 236, 233);
+    padding: 2px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #888;
+    padding: 3px;
+} 
+
+/* Estilos de la sección "Sobre mí" */
+.sobre-mi {
+    text-align: center;
+    padding: 20px;
+}
+
+.sobre-mi h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.sobre-mi p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    text-align: justify;
+}
+
+/* Estilos de la sección "Proyectos" */
+.proyectos {
+    padding: 5px;
+    text-align: center;
+}
+
+.proyectos h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+.grid-proyectos {
+    display: grid;
+    gap: 20px;
+    text-align: center;
+}
+
+.grid-proyectos article {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-proyectos article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color:rgb(244, 247, 248);
+}
+
+.grid-proyectos img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.grid-proyectos article:hover img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.grid-proyectos h3 {
+    margin: 15px 0;
+    color: #333;
+    text-align: center; 
+}
+
+.grid-proyectos p {
+    color: #555;
+    text-align: justify;
+    font-size: 0.9rem;
+}
+
+.grid-proyectos a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+.grid-proyectos a:hover {
+    color: #0a5e74; /* Más oscuro en hover */
+   
+}
+
+/* Estilos de la sección "Contacto" */
+#contacto {
+    padding: 30px;
+    text-align: center;
+}
+
+#contacto h2 {
+    font-size: 1.6rem;
+    color: #333;
+}
+
+#contacto p {
+    margin-bottom: px;
+}
+
+.iconos-contacto {
+    display: grid;
+    grid-auto-flow: column; /* Coloca los iconos en una fila */
+    gap: 15px; /* Espacio entre los iconos */
+    justify-content: center; /* Centra los iconos horizontalmente */
+}
+
+.iconos-contacto a {
+    text-decoration: none;
+    color: #333;
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+.iconos-contacto a:hover {
+    color: #3ca5a8;
+}
+
+/* Estilos del footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #3d3c3c;
+    background-color: rgb(164, 219, 203);
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .grid-proyectos {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    #contacto {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 899px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+    }
+}
+
+@media (min-width: 900px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
+    }
+}
+
